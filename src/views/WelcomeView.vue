@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     こんにちは
     <BookDetailTable/>
   </div>
@@ -19,24 +19,16 @@ export default {
   methods: {
     async getMessages () {
       try {
-        const res = await axios.get('http://localhost:3000/book/1', {
-          headers: {
-            uid: window.localStorage.getItem('uid'),
-            "access-token": window.localStorage.getItem('access-token'),
-            client:window.localStorage.getItem('client')
-          }
-        })
+        const res = await axios.get('http://localhost:3000/book/1')
         if (!res) {
-          new Error('メッセージ一覧を取得できませんでした')
+          //Backエンドに任すのか自分で出すのか...
+          new Error('書籍一覧を取得できませんでした')
         }
         this.messages = res.data
       } catch (err) {
         console.log(err)
       }
     },
-  },
-  mounted() {
-    this.getMessages()
-  },
+  }
 }
 </script>

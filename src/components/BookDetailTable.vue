@@ -9,8 +9,6 @@
 
 <style scoped>
   .detail-table {
-    background: white;
-    padding: 30px 20px;
-    border-bottom: 1px solid #eee;
+    background: #aaaa;
   }
 </style>
