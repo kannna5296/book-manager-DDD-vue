@@ -1,10 +1,8 @@
 <template>
   <div class="detail-table">
-    書籍詳細情報テーブルです
     <table>
-      <thead style="display: block;">
+      <thead>
         <tr>
-          <th>書籍ID</th>
           <th>タイトル</th>
           <th>タイトル（カナ）</th>
           <th>作者</th>
@@ -13,10 +11,9 @@
           <th>ステータス</th>
       </tr>
       </thead> 
-      <tbody style="display: block;">
+      <tbody>
         <tr v-for="book in list" :key="book">
-          <td>{{ book.id }}</td>
-          <td>{{ book.title }}</td>
+          <td><router-link v-bind:to="{ name: 'BookDetail', params: { id: book.id }}">{{ book.title }}</router-link></td>
           <td>{{ book.kana_title }}</td>
           <td>{{ book.author }}</td>
           <td>{{ book.kana_author }}</td>
@@ -43,11 +40,9 @@ export default {
 
 <style scoped>
   .detail-table {
-    background: #aaaa;
+    background-color: #b9d08b;
+    width: 60%;
     margin-left:auto;
     margin-right:auto;
-  }
-  thead {
-    width: 100%;
   }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div>
     こんにちは
-    <BookDetailTable/>
+    <BookList/>
   </div>
 </template>
 
 <script>
-import BookDetailTable from '../components/BookDetailTable.vue'
+import BookList from '../components/BookList.vue'
 export default {
-    components: { BookDetailTable },
+    components: { BookList },
 }
 </script>
