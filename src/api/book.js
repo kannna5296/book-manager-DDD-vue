@@ -6,4 +6,9 @@ export default {
         .get('/book/search')
         .then(response => (response.data.content))
     },
+    getDetail(id) {
+        return client
+        .get(`/book/${id}`)
+        .then(response => (response.data))
+    }
 }
